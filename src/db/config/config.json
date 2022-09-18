@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "football",
+    "password": "zaq12wsx",
+    "database": "football",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "football",
+    "password": "zaq12wsx",
+    "database": "football",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "football",
+    "password": "zaq12wsx",
+    "database": "football",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
