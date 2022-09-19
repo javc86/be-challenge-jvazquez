@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     tla: DataTypes.STRING,
     shortName: DataTypes.STRING,
     areaName: DataTypes.STRING,
-    email: DataTypes.STRING
+    website: DataTypes.STRING,
+    competitionId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Team',

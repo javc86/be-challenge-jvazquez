@@ -1,5 +1,5 @@
 import { Request, Response, Router, NextFunction } from 'express';
-import ExisCompetitionByCodeLeague from '../../../../modules/competition/domain/services/ExistsCompetitionByCodeLeague';
+import CompetitionExistsEception from '../../../../modules/competition/domain/exceptions/CompetitionExistsEception';
 import competitionRoutes from './competition.routes';
 
 const router = Router();
@@ -7,7 +7,8 @@ const router = Router();
 router.use('/competition', competitionRoutes);
 
 router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  if (err instanceof ExisCompetitionByCodeLeague) {
+  console.log('eeeeeee ==>', err);
+  if (err instanceof CompetitionExistsEception) {
     res.status(400).json({
       error: err.message
     });
@@ -16,7 +17,7 @@ router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+router.use((err: Error, req: Request, res: Response) => {
   console.log('Server error:', err);
   res.status(500).json({
     error: err.message

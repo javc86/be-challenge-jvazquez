@@ -1,6 +1,6 @@
 import { CompetitionRepository } from "../domain/repositories/CompetitionRepository";
 import { Services } from "../domain/services/models/Services";
-import CompetitionExistEception from "../domain/exceptions/CompetitionExistEception";
+import CompetitionExistsEception from "../domain/exceptions/CompetitionExistsEception";
 import ExistsCompetitionByCodeLeague from "../domain/services/ExistsCompetitionByCodeLeague";
 
 class ImportLeague {
@@ -13,10 +13,12 @@ class ImportLeague {
   }
 
   async run(codeLeague: string): Promise<boolean> {
+    console.log('ImportLeague codeLeague', codeLeague);
     const exists = await this._existsCompetitionByCodeLeague.run(codeLeague);
+    console.log('exists', exists);
 
     if (exists) {
-      throw new CompetitionExistEception();
+      throw new CompetitionExistsEception();
     }
 
     const result = await this._competitionRepository.importLeague(codeLeague);

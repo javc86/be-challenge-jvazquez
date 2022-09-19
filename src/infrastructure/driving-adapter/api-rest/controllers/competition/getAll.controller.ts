@@ -10,6 +10,6 @@ export default async (req: Request, res: Response, next: NextFunction) => {
     res.json({ competitions: result });
     return;
   } catch (error) {
-    next(error);
+    return next(error);
   }
 }

@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     position: DataTypes.STRING,
     dateOfBirth: DataTypes.STRING,
     countryOfBirth: DataTypes.STRING,
-    nationality: DataTypes.STRING
+    nationality: DataTypes.STRING,
+    teamId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Player',

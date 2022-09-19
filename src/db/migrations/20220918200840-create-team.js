@@ -20,7 +20,7 @@ module.exports = {
       areaName: {
         type: Sequelize.STRING
       },
-      email: {
+      website: {
         type: Sequelize.STRING
       },
       competitionId: {
