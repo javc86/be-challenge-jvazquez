@@ -7,7 +7,6 @@ const router = Router();
 router.use('/competition', competitionRoutes);
 
 router.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.log('eeeeeee ==>', err);
   if (err instanceof CompetitionExistsEception) {
     res.status(400).json({
       error: err.message
