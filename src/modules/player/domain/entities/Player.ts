@@ -11,6 +11,9 @@ export interface Player {
 }
 
 export interface GetAllByParams {
-  codeLeague: string;
   teamName?: string;
+}
+
+export interface GetAllByLeagueParams extends GetAllByParams {
+  codeLeague?: string;
 }

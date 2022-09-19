@@ -11,3 +11,7 @@ export interface Team {
   Players: Player[];
   competition: Competition;
 }
+
+export interface GetAllByParams {
+  teamName?: string;
+}

@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import GetAllBy from '../../../../../modules/player/appication/GetAllBy';
-import SequelizeDBPLayer from '../../../../implementations/SequelizeDBPLayer';
+import GetAllBy from '../../../../../modules/team/appication/GetAllBy';
+import SequelizeDBTeam from '../../../../implementations/SequelizeDBTeam';
 
 export default async (req: Request, res: Response, next: NextFunction) => {
   const { teamName }: { teamName?: string } = req.query;
-  const dbPlayer = new SequelizeDBPLayer();
-  const getAllBy = new GetAllBy(dbPlayer);
+  const dbTeam = new SequelizeDBTeam();
+  const getAllBy = new GetAllBy(dbTeam);
   
   try {
     const result = await getAllBy.run({

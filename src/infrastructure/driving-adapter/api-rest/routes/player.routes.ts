@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { getAllPlayerByController } from '../controllers';
+import { getAllPlayerByLeague, getAllPlayerBy } from '../controllers';
 
 const router = Router();
 
-router.get('/getAllBy/:codeLeague', getAllPlayerByController);
-// router.get('/getAllByTeamName/:teamName', () => {});
+router.get('/getAllByLeague/:codeLeague', getAllPlayerByLeague);
+router.get('/getAllBy', getAllPlayerBy);
 
 export default router;
