@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-const { Team } = require('./');
+const teamModel = require('./team');
 
 module.exports = (sequelize, DataTypes) => {
   class Player extends Model {
@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Player',
   });
+
+  const Team = teamModel(sequelize, DataTypes);
 
   Player.belongsTo(Team);
 

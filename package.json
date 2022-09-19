@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "prestart": "npx eslint .",
-    "start": "nodemon --exec ts-node index.ts",
+    "start": "nodemon --exec ts-node ./src/infrastructure/driving-adapter/api-rest/start.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,13 +22,12 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "inversify": "^6.0.1",
     "mysql2": "^2.3.3",
-    "reflect-metadata": "^0.1.13",
     "sequelize": "^6.23.0"
   },
   "devDependencies": {

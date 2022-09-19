@@ -2,7 +2,6 @@
 const {
   Model
 } = require('sequelize');
-const { Team } = require('./');
 
 module.exports = (sequelize, DataTypes) => {
   class Competition extends Model {
@@ -23,8 +22,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Competition',
   });
-
-  Competition.hasMany(Team);
 
   return Competition;
 };

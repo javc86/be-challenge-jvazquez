@@ -1,9 +1,6 @@
 import 'dotenv';
-import "reflect-metadata";
-import { injectable } from "inversify";
 import { IConfig } from '../models';
 
-@injectable()
 class ApiConfig implements IConfig {
   private apiToken: string;
   baseUri: string;
