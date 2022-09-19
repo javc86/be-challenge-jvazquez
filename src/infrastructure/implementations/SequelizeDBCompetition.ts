@@ -5,9 +5,8 @@ import { CompetitionRepository } from '../../modules/competition/domain/reposito
 import db from '../../db/models';
 import fetchApi from '../driving-adapter/api-rest/fetchApi';
 
-class SequelizeDB implements CompetitionRepository {
+class SequelizeDBCompetition implements CompetitionRepository {
   importLeague: (codeLeague: string) => Promise<boolean> = async (codeLeague: string) => {
-    console.log('codeLeague ==>', codeLeague);
     const result = await fetchApi({
       path: `/competitions/${codeLeague}/teams`,
       method: 'get',
@@ -57,7 +56,6 @@ class SequelizeDB implements CompetitionRepository {
   };
 
   getByCodeLeague: (codeLeague: string) => Promise<Competition | null> = async (codeLeague) => {
-    console.log('codeLeague result ==>', codeLeague);
     try {
       const competition = await db.Competition.findOne({
         where: {
@@ -68,6 +66,7 @@ class SequelizeDB implements CompetitionRepository {
       return competition;
     } catch (error) {
       console.log('Error db:', error);
+      throw error;
     }
   };
 
@@ -78,8 +77,9 @@ class SequelizeDB implements CompetitionRepository {
       return competitions;
     } catch (error) {
       console.log('Error db:', error);
+      throw error;
     }
   };
 }
 
-export default SequelizeDB;
+export default SequelizeDBCompetition;

@@ -7,5 +7,10 @@ export interface Player {
   dateOfBirth: string;
   countryOfBirth: string;
   nationality: string;
-  team: Team;
+  Team: Team;
+}
+
+export interface GetAllByParams {
+  codeLeague: string;
+  teamName?: string;
 }

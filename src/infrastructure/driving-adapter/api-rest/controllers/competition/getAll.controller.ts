@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import GetAll from '../../../../../modules/competition/appication/GetAll';
-import SequelizeDB from '../../../../implementations/SequelizeDB';
+import SequelizeDBCompetition from '../../../../implementations/SequelizeDBCompetition';
 
 export default async (req: Request, res: Response, next: NextFunction) => {
-  const db = new SequelizeDB();
+  const db = new SequelizeDBCompetition();
   const getAll = new GetAll(db);
   try {
     const result = await getAll.run();

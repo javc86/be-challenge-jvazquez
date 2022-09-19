@@ -1,7 +1,9 @@
 import importLeagueController from "./competition/importLeague.controller";
-import getAllController from "./competition/getAll.controller";
+import getAllCompetitionController from "./competition/getAll.controller";
+import getAllPlayerByController from "./player/getAllBy.controller";
 
 export {
   importLeagueController,
-  getAllController,
+  getAllCompetitionController,
+  getAllPlayerByController
 }
